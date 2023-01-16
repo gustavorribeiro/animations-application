@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean bartIsShowing = true;
+
     public void fade(View view) {
 
         Log.i("Info", "Imageview tapped");
@@ -17,12 +19,21 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView homerImageView = (ImageView) findViewById(R.id.homerImageView);
 
-        bartImageView.animate().alpha(0).setDuration(2000);
+        if (bartIsShowing) {
+            bartIsShowing = false;
 
-        homerImageView.animate().alpha(1).setDuration(2000);
+            bartImageView.animate().alpha(0).setDuration(2000);
+
+            homerImageView.animate().alpha(1).setDuration(2000);
+        } else {
+            bartIsShowing = true;
+
+            bartImageView.animate().alpha(1).setDuration(2000);
+
+            homerImageView.animate().alpha(0).setDuration(2000);
+        }
 
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
