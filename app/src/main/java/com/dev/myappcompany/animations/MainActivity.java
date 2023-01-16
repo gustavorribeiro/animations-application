@@ -13,9 +13,13 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("Info", "Imageview tapped");
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView bartImageView = (ImageView) findViewById(R.id.bartImageView);
 
-        imageView.animate().alpha(0).setDuration(2000);
+        ImageView homerImageView = (ImageView) findViewById(R.id.homerImageView);
+
+        bartImageView.animate().alpha(0).setDuration(2000);
+
+        homerImageView.animate().alpha(1).setDuration(2000);
 
     }
 
